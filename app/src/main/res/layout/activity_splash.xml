@@ -9,6 +9,7 @@
     android:id = "@+id/splash_imageview"
     android:src = "@drawable/splash_image"
     android:layout_gravity="center"
+
     />
 
 
