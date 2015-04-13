@@ -6,8 +6,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
-import android.view.Menu;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.ImageView;
 
+import java.lang.ref.WeakReference;
 
 
 public class SplashActivity extends Activity {
@@ -19,27 +22,57 @@ public class SplashActivity extends Activity {
     private long mStartTime = -1L;
     private boolean mIsDone;
 
-    private Handler mHandler = new Handler() {
+    private UiHandler mHandler;
 
-        @Override //classe anonima, metodo necessario
-                  //per la ricezione dei messaggi
+
+    private static class UiHandler extends Handler {
+
+        private WeakReference<SplashActivity> mActivityRef;
+
+        public UiHandler(final SplashActivity srcActivity) {
+            this.mActivityRef = new WeakReference<SplashActivity>(srcActivity);
+        }
+
+        @Override
         public void handleMessage(Message msg){
+
+            final SplashActivity srcActivity = this.mActivityRef.get();
+            if (srcActivity == null) {
+                return;
+                }
+
             switch(msg.what) {
                 case GO_AHEAD_WHAT:
-                    long elapsedTime = SystemClock.uptimeMillis() - mStartTime;
-                    if (elapsedTime >= MIN_WAIT_INTERVAL && !mIsDone){
-                        mIsDone = true;
-                        goAhead();
+                    long elapsedTime = SystemClock.uptimeMillis() - srcActivity.mStartTime;
+                    if (elapsedTime >= MIN_WAIT_INTERVAL && !srcActivity.mIsDone){
+                        srcActivity.mIsDone = true;
+                        srcActivity.goAhead();
                     }
                     break;
             }
         }
-    };
+    }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        mHandler = new UiHandler(this);
+
+        final ImageView logoImageView = (ImageView) findViewById(R.id.splash_imageview);
+        logoImageView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                long elapsedTime = SystemClock.uptimeMillis() - mStartTime;
+                if (elapsedTime>= MIN_WAIT_INTERVAL && !mIsDone) {
+                    mIsDone = true;
+                    goAhead();
+                }
+                return false;
+            }
+        });
     }
 
     @Override
@@ -52,7 +85,7 @@ public class SplashActivity extends Activity {
 
 
     private void goAhead() {
-        final Intent intent = new Intent(this, FirstAccesActivity.class);
+        final Intent intent = new Intent(this, FirstAccessActivity.class);
         startActivity(intent);
         finish();
     }
