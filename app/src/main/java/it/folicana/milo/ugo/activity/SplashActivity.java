@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
@@ -17,6 +18,8 @@ import it.folicana.milo.ugo.conf.Const;
 
 
 public class SplashActivity extends Activity {
+
+    private static final String TAG_LOG = SplashActivity.class.getName();
 
     private static final long MIN_WAIT_INTERVAL = 1500L;
     private static final long MAX_WAIT_INTERVAL =  3000L;
@@ -74,10 +77,13 @@ public class SplashActivity extends Activity {
         logoImageView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
+                Log.d(TAG_LOG, "ImageView touched!");
                 long elapsedTime = SystemClock.uptimeMillis() - mStartTime;
                 if (elapsedTime>= MIN_WAIT_INTERVAL && !mIsDone) {
                     mIsDone = true;
                     goAhead();
+                }else{
+                    Log.d(TAG_LOG, "Too much early!");
                 }
                 return false;
             }
