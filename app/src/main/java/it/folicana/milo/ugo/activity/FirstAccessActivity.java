@@ -1,7 +1,9 @@
-package it.folicana.milo.ugo;
+package it.folicana.milo.ugo.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+
+import it.folicana.milo.ugo.R;
 
 
 public class FirstAccessActivity extends Activity {

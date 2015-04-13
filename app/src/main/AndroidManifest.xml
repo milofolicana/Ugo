@@ -9,9 +9,9 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".MainActivity"/>
-        <activity android:name=".FirstAccessActivity"/>
+        <activity android:name=".activity.FirstAccessActivity"/>
         <activity
-            android:name=".SplashActivity"
+            android:name=".activity.SplashActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             android:label = "@string/app_name" >
             <intent-filter>
