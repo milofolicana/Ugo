@@ -13,6 +13,7 @@ import it.folicana.milo.ugo.R;
 public class FirstAccessActivity extends Activity {
 
     private static final String TAG_LOG = SplashActivity.class.getName();
+    private static final int LOGIN_REQUEST_ID = 1;
 
 
     @Override
@@ -56,6 +57,7 @@ public class FirstAccessActivity extends Activity {
     }
 
     private void doLogin() {
-
+        final Intent loginIntent = new Intent(LoginActivity.LOGIN_ACTION);
+        startActivityForResult(loginIntent, LOGIN_REQUEST_ID);
     }
 }

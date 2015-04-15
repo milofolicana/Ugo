@@ -19,6 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.LoginActivity"
+            android:label="@string/login_activity_label">
+           <intent-filter>
+               <action android:name="it.folicana.milo.ugo.action.LOGIN_ACTION"/>
+               <category android:name="android.intent.category.DEFAULT"/>
+           </intent-filter>
+        </activity>
 
     </application>
 
