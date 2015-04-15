@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="anonymous_button_label">Anonimo</string>
+    <string name="register_button_label">Registrati</string>
+    <string name="login_button_label">Accedi</string>
+</resources>

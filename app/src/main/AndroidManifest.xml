@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".activity.MainActivity"/>
         <activity android:name=".activity.FirstAccessActivity"/>
         <activity
             android:name=".activity.SplashActivity"

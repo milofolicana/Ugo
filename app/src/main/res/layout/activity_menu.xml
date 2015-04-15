@@ -14,22 +14,16 @@
     tools:context=".FirstAccessActivity"
     android:orientation="vertical">
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/anonymous_button_label"
-        android:id="@+id/anonymous_button"
+ <Button
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
         />
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/register_button_label"
-        android:id="@+id/register_button"/>
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/login_button_label"
-        android:id="@+id/login_button"/>
+<Button
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" />
+<Button
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" />
 
 </LinearLayout>
