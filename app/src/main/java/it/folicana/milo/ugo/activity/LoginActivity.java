@@ -12,6 +12,7 @@ import android.widget.TextView;
 import it.folicana.milo.ugo.R;
 import it.folicana.milo.ugo.conf.Const;
 import it.folicana.milo.ugo.model.UserModel;
+import it.folicana.milo.ugo.service.LoginService;
 
 
 public class LoginActivity extends Activity {
