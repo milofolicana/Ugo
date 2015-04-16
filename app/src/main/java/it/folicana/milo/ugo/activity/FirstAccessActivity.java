@@ -16,6 +16,7 @@ public class FirstAccessActivity extends Activity {
 
     private static final String TAG_LOG = SplashActivity.class.getName();
     private static final int LOGIN_REQUEST_ID = 1;
+    private static final int REGISTRATION_REQUEST_ID = 2;
 
 
     @Override
@@ -57,7 +58,8 @@ public class FirstAccessActivity extends Activity {
     }
 
     private void doRegistration() {
-
+        final Intent registrationIntent = new Intent(RegisterActivity.REGISTRATION_ACTION);
+        startActivityForResult(registrationIntent, REGISTRATION_REQUEST_ID);
     }
 
     private void doLogin() {
@@ -77,6 +79,19 @@ public class FirstAccessActivity extends Activity {
                     break;
                 case RESULT_CANCELED:
                     break;
+            }
+        }else if (requestCode == REGISTRATION_REQUEST_ID){
+            switch (resultCode){
+                case RESULT_OK:
+                    final UserModel userModel = (UserModel) data.getParcelableExtra(RegisterActivity.USER_DATA_EXTRA);
+                    final Intent detailIntent = new Intent (ShowUserDataActivity.SHOW_USER_ACTION);
+                    detailIntent.putExtra(ShowUserDataActivity.USER_EXTRA, userModel);
+                    startActivity(detailIntent);
+                    break;
+                case RESULT_CANCELED:
+                    break;
+
+
             }
         }
     }

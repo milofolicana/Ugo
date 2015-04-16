@@ -11,7 +11,10 @@
         <activity android:name=".activity.MainActivity"/>
         <activity android:name=".activity.FirstAccessActivity"/>
         <activity android:name=".activity.MenuActivity"/>
-        <activity
+        <activity android:name=".activity.NewDataActivity"/>
+        <activity android:name=".activity.InputDataActivity"/>
+        <activity android:name=".activity.LocalDataActivity"/>
+        <activity android:name=".activity.RemoteDataActivity"/>
             android:name=".activity.SplashActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             android:label = "@string/app_name" >
@@ -29,6 +32,24 @@
            </intent-filter>
         </activity>
 
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:label="@string/register_activity_label"
+            android:theme="@android:style/Theme.Holo.Light">
+
+            <intent-filter>
+                <action android:name="it.folicana.milo.ugo.action.REGISTRATION_ACTION"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.ShowUserDataActivity"
+            android:label="@string/show_user_data_activity_label">
+            <intent-filter>
+                <action android:name="it.folicana.milo.ugo.action.SHOW_USER_ACTION"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
