@@ -10,6 +10,7 @@
 
         <activity android:name=".activity.MainActivity"/>
         <activity android:name=".activity.FirstAccessActivity"/>
+        <activity android:name=".activity.MenuActivity"/>
         <activity
             android:name=".activity.SplashActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"

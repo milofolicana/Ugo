@@ -20,7 +20,7 @@ public class UserModel implements Parcelable {
     private String mEmail;
     private String mLocation;
 
-    private static final Parcelable.Creator<UserModel> CREATOR = new Parcelable.Creator<UserModel>(){
+    public static final Parcelable.Creator<UserModel> CREATOR = new Parcelable.Creator<UserModel>(){
         public UserModel createFromParcel(Parcel in){
             return new UserModel(in);
         }
