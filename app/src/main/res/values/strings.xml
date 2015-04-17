@@ -30,6 +30,9 @@
     <string name="placeholder_local_data">Local Data</string>
     <string name="placeholder_data_question">Data question</string>
     <string name="send_button_label">Send</string>
-
+    <string name="data_question_format">How do you feel in %1$s?</string>
+    <string name="new_data_button_label">New Data</string>
+    <string name="old_data_button_label">Old Data</string>
+    <string name="remote_data_button_label">Remote Data</string>
 
 </resources>
