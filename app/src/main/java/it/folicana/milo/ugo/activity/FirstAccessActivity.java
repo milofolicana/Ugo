@@ -3,16 +3,18 @@ package it.folicana.milo.ugo.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
 import it.folicana.milo.ugo.R;
+import it.folicana.milo.ugo.fragment.FirstAccessFragment;
 import it.folicana.milo.ugo.model.UserModel;
 
 
-public class FirstAccessActivity extends Activity {
+public class FirstAccessActivity extends FragmentActivity implements FirstAccessFragment.FirstAccessListener {
 
     private static final String TAG_LOG = SplashActivity.class.getName();
     private static final int LOGIN_REQUEST_ID = 1;
@@ -22,8 +24,12 @@ public class FirstAccessActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_single_fragment);
+        if (savedInstanceState == null){
+            final FirstAccessFragment fragment = new FirstAccessFragment();
+            getFragmentManager().beginTransaction().add(R.id.anchor_point,fragment).commit();
+        }
+/*
         final Button anonymousButton = (Button) findViewById(R.id.anonymous_button);
         anonymousButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,10 +52,10 @@ public class FirstAccessActivity extends Activity {
             public void onClick(View v) {
                 doLogin();
             }
-        });
+        });   */
     }
 
-    private void enterAsAnonymous() {
+    public void enterAsAnonymous() {
         Log.d(TAG_LOG, "Anonymous access");
         final Intent anonymousIntent = new Intent(this,MenuActivity.class);
         final UserModel userModel = UserModel.create(System.currentTimeMillis());
@@ -57,12 +63,12 @@ public class FirstAccessActivity extends Activity {
         startActivity(anonymousIntent);
     }
 
-    private void doRegistration() {
+    public void doRegistration() {
         final Intent registrationIntent = new Intent(RegisterActivity.REGISTRATION_ACTION);
         startActivityForResult(registrationIntent, REGISTRATION_REQUEST_ID);
     }
 
-    private void doLogin() {
+    public void doLogin() {
         final Intent loginIntent = new Intent(LoginActivity.LOGIN_ACTION);
         startActivityForResult(loginIntent, LOGIN_REQUEST_ID);
     }
