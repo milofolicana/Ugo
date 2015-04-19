@@ -1,21 +1,25 @@
 package it.folicana.milo.ugo.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 
 import it.folicana.milo.ugo.R;
-import it.folicana.milo.ugo.conf.Const;
+import it.folicana.milo.ugo.fragment.RemoteDataFragment;
 
+public class RemoteDataActivity extends FragmentActivity {
 
-public class RemoteDataActivity extends Activity {
 
     private static final String TAG_LOG = RemoteDataActivity.class.getName();
-    public static final String INPUT_TYPE_EXTRA = Const.PKG + ".extra.INPUT_TYPE_EXTRA";
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_remote_data);
+        setContentView(R.layout.activity_single_fragment);
+
+        if (savedInstanceState == null) {
+            final RemoteDataFragment fragment = new RemoteDataFragment();
+            getFragmentManager().beginTransaction().add(R.id.anchor_point, fragment).commit();
+        }
     }
 
-}
 
+}

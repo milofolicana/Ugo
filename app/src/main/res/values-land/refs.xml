@@ -1,0 +1,3 @@
+<resources>
+    <item type="layout" name="activity_menu">@layout/activity_double_fragment</item>
+</resources>

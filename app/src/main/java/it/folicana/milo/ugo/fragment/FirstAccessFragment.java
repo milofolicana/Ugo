@@ -9,9 +9,7 @@ import android.view.ViewGroup;
 
 import it.folicana.milo.ugo.R;
 
-/**
- * Created by Milo on 18/04/2015.
- */
+
 public class FirstAccessFragment extends Fragment {
 
     public interface FirstAccessListener {
@@ -71,3 +69,4 @@ public class FirstAccessFragment extends Fragment {
     }
 
 }
+
