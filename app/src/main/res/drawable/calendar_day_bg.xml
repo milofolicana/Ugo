@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:app="http://schemas.android.com/apk/res/it.folicana.milo.ugo">
+    <item
+        app:state_this_month="true"
+        app:state_today="false"
+        app:state_other_month="false"
+        app:state_day_selected="false"
+        android:drawable="@drawable/calendar_this_month_bg_color"/>
+    <item
+        app:state_this_month="false"
+        app:state_today="true"
+        app:state_other_month="false"
+        app:state_day_selected="false"
+        android:drawable="@drawable/calendar_today_bg_color"/>
+    <item
+        app:state_this_month="false"
+        app:state_today="false"
+        app:state_other_month="true"
+        app:state_day_selected="false"
+        android:drawable="@drawable/calendar_other_month_bg_color"/>
+    <item
+        app:state_this_month="false"
+        app:state_today="false"
+        app:state_other_month="false"
+        app:state_day_selected="true"
+        android:drawable="@drawable/calendar_selected_bg_color"/>
+</selector>

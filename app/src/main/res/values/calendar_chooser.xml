@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dimension resources -->
+    <dimen name="calendar_width">250dp</dimen>
+    <dimen name="calendar_height">250dp</dimen>
+    <dimen name="calendar_month_text_size">25sp</dimen>
+    <!-- Style resources -->
+    <style name="CalendarStyle">
+        <item name="android:background">@color/light_grey</item>
+    </style>
+    <!-- Placeholders resources -->
+    <string name="placeholder_month_name">December</string>
+    <!-- String resources -->
+    <string name="calendar_dialog_title">Select the date</string>
+    <string name="calendar_yes_label">Confirm</string>
+    <string name="calendar_no_label">Cancel</string>
+    <!-- Custom states -->
+    <declare-styleable name="calendar_day">
+        <attr name="state_other_month" format="boolean"/>
+        <attr name="state_this_month" format="boolean"/>
+        <attr name="state_today" format="boolean"/>
+        <attr name="state_day_selected" format="boolean"/>
+    </declare-styleable>
+    <!-- Colors resources -->
+    <color name="calendar_this_month_bg_color">@color/light_grey</color>
+    <color name="calendar_today_bg_color">@color/red</color>
+    <color name="calendar_selected_bg_color">@color/green</color>
+    <color name="calendar_other_month_bg_color">@color/dark_grey</color>
+    <!-- Drawables resources -->
+    <drawable name="calendar_this_month_bg_color">@color/light_grey</drawable>
+    <drawable name="calendar_today_bg_color">@color/red</drawable>
+    <drawable name="calendar_selected_bg_color">@color/green</drawable>
+    <drawable name="calendar_other_month_bg_color">@color/dark_grey</drawable>
+</resources>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/calendar_widget"
+    android:layout_width="@dimen/calendar_width"
+    android:layout_height="@dimen/calendar_height"
+    >
+
+    <RelativeLayout
+        android:id="@+id/calendar_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/calendar_previous_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/calendar_previous_item"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"></ImageButton>
+
+        <ImageButton
+            android:id="@+id/calendar_next_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/calendar_next_item"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"></ImageButton>
+
+        <TextView
+            android:id="@+id/calendar_month_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/placeholder_month_name"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:textSize="@dimen/calendar_month_text_size"
+            android:layout_toRightOf="@+id/calendar_previous_button"
+            android:layout_alignBottom="@+id/calendar_previous_button"
+            android:layout_toLeftOf="@+id/calendar_next_button"></TextView>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/calendar_name_days_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/calendar_header">
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/calendar_days_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/calendar_name_days_container">
+    </LinearLayout>
+
+
+</RelativeLayout>

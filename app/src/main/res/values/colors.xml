@@ -5,6 +5,7 @@
 
     <color name = "red">#FF0000</color>
     <color name = "green">#00FF00</color>
+    <color name = "light_red">#F2473F</color>
     <color name = "blue">#0000FF</color>
     <color name = "white">#FFFFFF</color>
     <color name = "black">#000000</color>
@@ -12,7 +13,18 @@
     <color name = "light_grey">#EEEEEE</color>
     <color name = "dark_grey">#555555</color>
 
+    <color name = "primary">#39BEA3</color>
+    <color name = "secondary">#F28764</color>
+
     <!-- Colori Applicazioni -->
 
     <color name="error_message_color">@color/red</color>
+    <color name="button_pressed_color">@color/secondary</color>
+    <color name="button_not_pressed_color">@color/primary</color>
+    <color name="button_focused_color">@color/light_grey</color>
+
 </resources>
+
+
+
+

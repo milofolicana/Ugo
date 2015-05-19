@@ -2,6 +2,8 @@ package it.folicana.milo.ugo.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.AssetManager;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -61,6 +63,7 @@ public class FirstAccessActivity extends FragmentActivity implements FirstAccess
         final UserModel userModel = UserModel.create(System.currentTimeMillis());
         anonymousIntent.putExtra(MenuActivity.USER_EXTRA, userModel);
         startActivity(anonymousIntent);
+
     }
 
     public void doRegistration() {

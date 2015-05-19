@@ -8,13 +8,12 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".activity.MainActivity"/>
-        <activity android:name=".activity.FirstAccessActivity"/>
-        <activity android:name=".activity.MenuActivity"/>
-        <activity android:name=".activity.NewDataActivity"/>
-        <activity android:name=".activity.InputDataActivity"/>
-        <activity android:name=".activity.LocalDataActivity"/>
-        <activity android:name=".activity.RemoteDataActivity"/>
+        <activity android:name=".activity.FirstAccessActivity" android:theme="@style/UgoTheme"/>
+        <activity android:name=".activity.MenuActivity" android:theme="@style/UgoTheme"/>
+        <activity android:name=".activity.NewDataActivity" android:theme="@style/UgoTheme"/>
+        <activity android:name=".activity.InputDataActivity" android:theme="@style/UgoTheme"/>
+        <activity android:name=".activity.LocalDataActivity" android:theme="@style/UgoTheme"/>
+        <activity android:name=".activity.RemoteDataActivity" android:theme="@style/UgoTheme"/>
         <activity
             android:name=".activity.SplashActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
@@ -27,7 +26,8 @@
 
         <activity
             android:name=".activity.LoginActivity"
-            android:label="@string/login_activity_label">
+            android:label="@string/login_activity_label"
+            android:theme="@style/UgoTheme">
            <intent-filter>
                <action android:name="it.folicana.milo.ugo.action.LOGIN_ACTION"/>
                <category android:name="android.intent.category.DEFAULT"/>
@@ -37,7 +37,7 @@
         <activity
             android:name=".activity.RegisterActivity"
             android:label="@string/register_activity_label"
-            android:theme="@android:style/Theme.Holo.Light">
+            android:theme="@style/UgoTheme">
 
             <intent-filter>
                 <action android:name="it.folicana.milo.ugo.action.REGISTRATION_ACTION"/>
@@ -46,7 +46,8 @@
         </activity>
         <activity
             android:name=".activity.ShowUserDataActivity"
-            android:label="@string/show_user_data_activity_label">
+            android:label="@string/show_user_data_activity_label"
+            android:theme="@style/UgoTheme">
             <intent-filter>
                 <action android:name="it.folicana.milo.ugo.action.SHOW_USER_ACTION"/>
                 <category android:name="android.intent.category.DEFAULT"/>

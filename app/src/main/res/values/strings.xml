@@ -34,5 +34,7 @@
     <string name="new_data_button_label">New Data</string>
     <string name="old_data_button_label">Old Data</string>
     <string name="remote_data_button_label">Remote Data</string>
+    <string name="placeholder_birth_date">-</string>
+    <string name="select_date_button_label">change date</string>
 
 </resources>
